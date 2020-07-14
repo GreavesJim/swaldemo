@@ -2,9 +2,9 @@ export default class NotificationService {
   static basic(text = "", title = text) {
     swal.fire({
       title,
-
+      text,
       icon: "success",
-      showConfirmButton: false
+      showConfirmButton: false,
     });
   }
 
@@ -13,10 +13,10 @@ export default class NotificationService {
       title: "Error",
       text: "hey thats no good",
       icon: "error",
-      position: "top-right",
+      position: "center-end",
       toast: true,
       showConfirmButton: false,
-      timer: 3000
+      timer: 3000,
     });
   }
 
@@ -28,7 +28,7 @@ export default class NotificationService {
       showCancelButton: true,
       confirmButtonColor: "green",
       cancelButtonColor: "red",
-      confirmButtonText: "Ya delete it!"
+      confirmButtonText: "Ya delete it!",
     });
 
     if (res.value) {
@@ -43,17 +43,17 @@ export default class NotificationService {
       input: "text",
       confirmButtonText: "Next &rarr;",
       showCancelButton: true,
-      progressSteps: ["1", "2", "3"]
+      progressSteps: ["1", "2", "3"],
     })
       .queue([
         {
           title: "Question 1",
-          text: "Chaining swal2 modals is easy"
+          text: "Chaining swal2 modals is easy",
         },
         "Question 2",
-        "Question 3"
+        "Question 3",
       ])
-      .then(result => {
+      .then((result) => {
         if (result.value) {
           const answers = JSON.stringify(result.value);
           Swal.fire({
@@ -62,7 +62,7 @@ export default class NotificationService {
             Your answers:
             <pre><code>${answers}</code></pre>
           `,
-            confirmButtonText: "Lovely!"
+            confirmButtonText: "Lovely!",
           });
           return answers;
         }
@@ -71,16 +71,19 @@ export default class NotificationService {
 
   static async Nyan() {
     Swal.fire({
-      title: "Custom width, padding, background.",
+      color: "orange",
+      title: "Custom alert",
       width: 600,
-      padding: "3em",
-      background: "#fff url(https://sweetalert2.github.io/images/trees.png)",
+      padding: "10em",
+      position: "bottom",
+      background:
+        "lightblue url(https://png2.cleanpng.com/sh/f1a9dc729fdde7963d035fdcbe8f067a/L0KzQYm3VsI6N5lmj5H0aYP2gLBuTgBqgJZxRdN7dD3ldbLrTgBifKVqitC2Y4X3dX7uiP90fF46eqUBZXXnSIqBVMQ1OF8AT6ICNEC0QIK8U8A0Omc8TKYBMkO6PsH1h5==/kisspng-pixel-art-bead-pattern-cute-ghost-5b36eed8984440.9707401015303267446237.png) no-repeat 100px 50px/200px 200px",
       backdrop: `
         rgba(0,0,123,0.4)
-        url("https://sweetalert2.github.io/images/nyan-cat.gif")
-        left top
+        url("https://thumbs.gfycat.com/UnrulyGrossGhostshrimp-small.gif")
+        top
         no-repeat
-      `
+      `,
     });
   }
 }

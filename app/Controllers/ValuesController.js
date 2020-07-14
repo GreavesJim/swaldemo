@@ -12,6 +12,10 @@ export default class ValuesController {
   constructor() {
     store.subscribe("values", _draw);
   }
+  note() {
+    ValuesService.note();
+  }
+
   alert() {
     ValuesService.alert();
   }

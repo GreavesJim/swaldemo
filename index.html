@@ -10,14 +10,19 @@
 
   <body>
     <h1>hello sweetalerttest</h1>
-    <button onclick="app.valuesController.alert()">ALERT</button>
+    <button onclick="app.valuesController.note()">Note</button>
+    <button onclick="app.valuesController.alert()">Quote</button>
     <button onclick="app.valuesController.toasty()">Toasty</button>
     <button onclick="app.valuesController.confirm()">Confirm</button>
     <button onclick="app.valuesController.input()">Input</button>
     <button onclick="app.valuesController.fun()">FUN</button>
-    <button onclick="app.valuesController"></button>
 
-    <script src="app/main.js" type="module"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"
+      integrity="sha256-XmdRbTre/3RulhYk/cOBUMpYlaAp2Rpo/s556u0OIKk="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="app/main.js" type="module"></script>
   </body>
 </html>
